@@ -1,0 +1,475 @@
+﻿@model Ecom_Store.Models.MoviesModel
+
+@{
+    ViewData["Title"] = "MoviesDetails";
+    Layout = "~/Views/Shared/Header_footer_layout.cshtml";
+}
+
+@* <h1>MoviesDetails</h1>
+
+<div>
+    <h4>MoviesModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Movies_Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Movies_Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Movies_Desc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Movies_Desc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EndTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EndTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ScreeningDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ScreeningDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CinemaName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CinemaName.CinemaDesc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MoviePicture)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MoviePicture)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+ *@
+
+<!-- _________________________ Start Middle _________________________ -->
+<div id="middle">
+    <style type="text/css">
+        .headline_color {
+            background-color:;
+        }
+
+        .headline_aligner,
+        .cmsmasters_breadcrumbs_aligner {
+            min-height: 80px;
+        }
+    </style>
+    <div class="headline cmsmasters_color_scheme_default">
+        <div class="headline_outer cmsmasters_headline_disabled">
+            <div class="headline_color"></div>
+        </div>
+    </div>
+    <div class="middle_inner">
+        <div class="content_wrap fullwidth">
+
+            <!--_________________________ Start Content _________________________ -->
+            <div class="middle_content entry"></div>
+        </div>
+        <style type="text/css">
+            #cmsmasters_row_6635dbc14cbc40_02892593 .cmsmasters_row_outer_parent {
+                padding-top: 50px;
+            }
+
+            #cmsmasters_row_6635dbc14cbc40_02892593 .cmsmasters_row_outer_parent {
+                padding-bottom: 50px;
+            }
+
+            #cmsmasters_heading_6635dbc14d0769_27425395 {
+                text-align: center;
+                margin-top: 30px;
+                margin-bottom: 10px;
+            }
+
+                #cmsmasters_heading_6635dbc14d0769_27425395 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_6635dbc14d0769_27425395 .cmsmasters_heading,
+                    #cmsmasters_heading_6635dbc14d0769_27425395 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_6635dbc14d0769_27425395 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_6635dbc14d0b53_87134726 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+
+                #cmsmasters_heading_6635dbc14d0b53_87134726 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_6635dbc14d0b53_87134726 .cmsmasters_heading,
+                    #cmsmasters_heading_6635dbc14d0b53_87134726 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_6635dbc14d0b53_87134726 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_6635dbc14d0e72_93304110 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 10px;
+            }
+
+                #cmsmasters_heading_6635dbc14d0e72_93304110 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_6635dbc14d0e72_93304110 .cmsmasters_heading,
+                    #cmsmasters_heading_6635dbc14d0e72_93304110 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_6635dbc14d0e72_93304110 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_6635dbc14d1177_50708553 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+
+                #cmsmasters_heading_6635dbc14d1177_50708553 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_6635dbc14d1177_50708553 .cmsmasters_heading,
+                    #cmsmasters_heading_6635dbc14d1177_50708553 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_6635dbc14d1177_50708553 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_6635dbc14d1446_80660492 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 10px;
+            }
+
+                #cmsmasters_heading_6635dbc14d1446_80660492 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_6635dbc14d1446_80660492 .cmsmasters_heading,
+                    #cmsmasters_heading_6635dbc14d1446_80660492 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_6635dbc14d1446_80660492 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_6635dbc14d17c9_53517167 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+
+                #cmsmasters_heading_6635dbc14d17c9_53517167 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_6635dbc14d17c9_53517167 .cmsmasters_heading,
+                    #cmsmasters_heading_6635dbc14d17c9_53517167 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_6635dbc14d17c9_53517167 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_6635dbc14d1a90_80284185 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 10px;
+            }
+
+                #cmsmasters_heading_6635dbc14d1a90_80284185 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_6635dbc14d1a90_80284185 .cmsmasters_heading,
+                    #cmsmasters_heading_6635dbc14d1a90_80284185 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_6635dbc14d1a90_80284185 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_6635dbc14d1d61_24063689 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+
+                #cmsmasters_heading_6635dbc14d1d61_24063689 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_6635dbc14d1d61_24063689 .cmsmasters_heading,
+                    #cmsmasters_heading_6635dbc14d1d61_24063689 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_6635dbc14d1d61_24063689 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_6635dbc14d2017_61893681 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 10px;
+            }
+
+                #cmsmasters_heading_6635dbc14d2017_61893681 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_6635dbc14d2017_61893681 .cmsmasters_heading,
+                    #cmsmasters_heading_6635dbc14d2017_61893681 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_6635dbc14d2017_61893681 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_6635dbc14d2304_37250410 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 50px;
+            }
+
+                #cmsmasters_heading_6635dbc14d2304_37250410 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_6635dbc14d2304_37250410 .cmsmasters_heading,
+                    #cmsmasters_heading_6635dbc14d2304_37250410 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_6635dbc14d2304_37250410 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_6635dbc14d54c3_66423844 {
+                text-align: left;
+                margin-top: 0px;
+                margin-bottom: 10px;
+            }
+
+                #cmsmasters_heading_6635dbc14d54c3_66423844 .cmsmasters_heading {
+                    text-align: left;
+                }
+
+                    #cmsmasters_heading_6635dbc14d54c3_66423844 .cmsmasters_heading,
+                    #cmsmasters_heading_6635dbc14d54c3_66423844 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_6635dbc14d54c3_66423844 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_6635dbc14d5892_31345069 {
+                text-align: left;
+                margin-top: 0px;
+                margin-bottom: 30px;
+            }
+
+                #cmsmasters_heading_6635dbc14d5892_31345069 .cmsmasters_heading {
+                    text-align: left;
+                    background-color: #fa6426;
+                    padding-left: 1em;
+                    padding-right: 1em;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px;
+                }
+
+                    #cmsmasters_heading_6635dbc14d5892_31345069 .cmsmasters_heading,
+                    #cmsmasters_heading_6635dbc14d5892_31345069 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                        color: #ffffff;
+                    }
+
+                #cmsmasters_heading_6635dbc14d5892_31345069 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_divider_6635dbc14d5c12_93629732 {
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                padding-top: 0px;
+                margin-bottom: 30px;
+            }
+
+            #cmsmasters_divider_6635dbc14d62a8_91769769 {
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                padding-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            #cmsmasters_heading_6635dbc14d6596_99629472 {
+                text-align: left;
+                margin-top: 0px;
+                margin-bottom: 30px;
+            }
+
+                #cmsmasters_heading_6635dbc14d6596_99629472 .cmsmasters_heading {
+                    text-align: left;
+                }
+
+                    #cmsmasters_heading_6635dbc14d6596_99629472 .cmsmasters_heading,
+                    #cmsmasters_heading_6635dbc14d6596_99629472 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_6635dbc14d6596_99629472 .cmsmasters_heading_divider {
+                }
+        </style>
+        <div id="cmsmasters_row_6635dbc14cbc40_02892593" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+            <div class="cmsmasters_row_outer_parent">
+                <div class="cmsmasters_row_outer">
+                    <div class="cmsmasters_row_inner">
+                        <div class="cmsmasters_row_margin">
+                            <div class="cmsmasters_column one_third">
+                                <div class="aligncenter">
+                                    <div class="cmsmasters_img  cmsmasters_image_c">
+                                        <img src="~/MoviesPicture/@Html.DisplayFor(model => model.MoviePicture)" height="400px" width="300px" />
+                                    </div>
+                                </div>
+
+                                <div id="cmsmasters_heading_6635dbc14d0769_27425395" class="cmsmasters_heading_wrap cmsmasters_heading_align_center">
+                                    <h3 class="cmsmasters_heading">@Html.DisplayNameFor(model => model.StartTime)</h3>
+                                    
+                                </div>
+                                <div id="cmsmasters_heading_6635dbc14d0b53_87134726" class="cmsmasters_heading_wrap cmsmasters_heading_align_center">
+                                    <h5 class="cmsmasters_heading"> @Html.DisplayFor(model => model.StartTime)</h5>
+                                </div>
+                                <div id="cmsmasters_heading_6635dbc14d0e72_93304110" class="cmsmasters_heading_wrap cmsmasters_heading_align_center">
+                                    <h3 class="cmsmasters_heading">
+                                        @Html.DisplayNameFor(model => model.EndTime)
+                                    </h3>
+                                </div>
+                                <div id="cmsmasters_heading_6635dbc14d1177_50708553" class="cmsmasters_heading_wrap cmsmasters_heading_align_center">
+                                    <h5 class="cmsmasters_heading">@Html.DisplayFor(model => model.EndTime)</h5>
+                                </div>
+                                <div id="cmsmasters_heading_6635dbc14d1446_80660492" class="cmsmasters_heading_wrap cmsmasters_heading_align_center">
+                                    <h3 class="cmsmasters_heading">@Html.DisplayNameFor(model => model.ScreeningDate):</h3>
+                                </div>
+                                <div id="cmsmasters_heading_6635dbc14d17c9_53517167" class="cmsmasters_heading_wrap cmsmasters_heading_align_center">
+                                    <h5 class="cmsmasters_heading">@Html.DisplayFor(model => model.ScreeningDate)</h5>
+                                </div>
+                                <div id="cmsmasters_heading_6635dbc14d1a90_80284185" class="cmsmasters_heading_wrap cmsmasters_heading_align_center">
+                                    <h3 class="cmsmasters_heading">@Html.DisplayNameFor(model => model.CinemaName)</h3>
+                                </div>
+                                <div id="cmsmasters_heading_6635dbc14d1d61_24063689" class="cmsmasters_heading_wrap cmsmasters_heading_align_center">
+                                    <h5 class="cmsmasters_heading">@Html.DisplayFor(model => model.CinemaName.CinemaName)</h5>
+                                </div>
+                                
+                            </div>
+                            <div class="cmsmasters_column two_third">
+
+                                <div id="cmsmasters_heading_6635dbc14d54c3_66423844" class="cmsmasters_heading_wrap cmsmasters_heading_align_left">
+                                    <h1 class="cmsmasters_heading">@Html.DisplayFor(model => model.Movies_Name) </h1>
+                                    <input type="hidden" asp-for="id" />
+                                    <input type="submit" value="Save" class="btn btn-primary" />
+
+
+                                </div>
+                                <div id="cmsmasters_heading_6635dbc14d5892_31345069" class="cmsmasters_heading_wrap cmsmasters_heading_align_left">
+                                    <h4 class="cmsmasters_heading"> </h4>
+                                </div>
+                                <div id="cmsmasters_divider_6635dbc14d5c12_93629732" class="cmsmasters_divider cmsmasters_divider_width_long cmsmasters_divider_pos_center"></div>
+                                <div class="cmsmasters_text">
+                                    <p>
+                                        @Html.DisplayFor(model => model.Movies_Desc)
+                                    </p>
+                                </div>
+
+                                <div id="cmsmasters_divider_6635dbc14d62a8_91769769" class="cmsmasters_divider cmsmasters_divider_width_long cmsmasters_divider_pos_center"></div>
+                                <div id="cmsmasters_heading_6635dbc14d6596_99629472" class="cmsmasters_heading_wrap cmsmasters_heading_align_left">
+                                    <h2 class="cmsmasters_heading">Official Trailer</h2>
+                                </div>
+                                <div class="cmsmasters_embed_wrap">
+                                    <iframe src="https://player.vimeo.com/video/54943110" width="640" height="360" frameborder="0" title="ROLLIN&#039; SAFARI - &#039;Flamingos&#039; - Official Trailer FMX 2013" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cl"></div>
+        <div class="content_wrap fullwidth">
+
+            <div class="middle_content entry"></div>
+            <!-- _________________________ Finish Content _________________________ -->
+
+        </div>
+        <div>
+            <h1>Ticket Booking </h1>
+            <p>Please Fill your email and Select the seat you want to select.</p>
+          
+            @for (var i = 1; i <= ViewBag.CinemaSeats; i++)
+            {
+                <form method="post" action="@Url.Action("bookedseats", "User")" style="padding-left:400px;">
+                    <input type="email" required name="UserEmail" placeholder="UserEmail" />
+                    <br/>
+                    <input type="hidden" name="SeatId" value="@i" />
+                    <input type="hidden" name="CinemaId" value="@ViewBag.CinemaId" />
+                    <input type="hidden" name="MovieId" value="@ViewBag.MovieId" />
+                    <button class="col-lg-3" type="submit">Seat No @i</button>
+                    <br/>
+
+
+                </form>
+
+            }
+            <div>
+
+                @if (ViewBag.Status != null)
+                {
+                    <script>
+                        alert('@ViewBag.Status');
+                    </script>
+                }
+            </div>
+        </div>
+
+       
+

@@ -1,0 +1,68 @@
+﻿@model Ecom_Store.Models.RegisterModel
+
+@{
+    ViewData["Title"] = "login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    <style >
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 400px;
+    }
+
+    .col-md-4 {
+        background-color: black;
+        width: 40%;
+        height: 450px;
+        border-radius: 20px;
+    }
+
+    .form-control {
+        height: 60px;
+        margin-top: 20px;
+    }
+
+    .btn {
+        width: 100%;
+        height: 60px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+</style>
+</style>
+
+<h1>login</h1>
+
+<h4>RegisterModel</h4>
+<p>@ViewBag.msg</p>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="UserEmail" class="control-label"></label>
+                <input asp-for="UserEmail" class="form-control" placeholder="Enter Your Email" />
+                <span asp-validation-for="UserEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserPassword" class="control-label"></label>
+                <input asp-for="UserPassword" class="form-control" placeholder="Enter Your Password" />
+                <span asp-validation-for="UserPassword" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

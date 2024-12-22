@@ -1,0 +1,64 @@
+﻿@model Ecom_Store.SecondaryModels.FoodCourt_ImgModel
+
+@{
+    ViewData["Title"] = "AddFoodCourts";
+    Layout = "~/Views/Shared/Admin_Header_Footer.cshtml";
+}
+<style>
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 350px;
+    }
+
+    .col-md-4 {
+        background-color: black;
+        width: 40%;
+        height: 350px;
+        border-radius: 20px;
+    }
+
+    .form-control {
+        height: 60px;
+        margin-top: 20px;
+    }
+
+    #btn {
+        width: 100%;
+        height: 60px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+</style>
+
+<h1>AddFoodCourts</h1>
+
+<h4>FoodCourtModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddFoodCourts" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+               @*  <label asp-for="FoodCourtName" class="control-label"></label> *@
+                <input asp-for="FoodCourtName" class="form-control" placeholder="FoodCourtName" />
+                <span asp-validation-for="FoodCourtName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @* <label asp-for="FoodCourtLogo" class="control-label"></label> *@
+                <input asp-for="FoodCourtLogo" type="file" class="form-control" placeholder="FoodCourtLogo" />
+                <span asp-validation-for="FoodCourtLogo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" id="btn" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

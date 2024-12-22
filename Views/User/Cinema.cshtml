@@ -1,0 +1,135 @@
+﻿@model IEnumerable<Ecom_Store.Models.CinemaModel>
+
+@{
+    ViewData["Title"] = "Cinema";
+    Layout = "~/Views/Shared/Header_footer_layout.cshtml";
+}
+
+
+
+<!-- _________________________ Start Middle _________________________ -->
+<div id="middle">
+    <style type="text/css">
+        .headline_color {
+            background-color:;
+        }
+
+        .headline_aligner,
+        .cmsmasters_breadcrumbs_aligner {
+            min-height: 80px;
+        }
+    </style>
+    <div class="headline cmsmasters_color_scheme_default">
+        <div class="headline_outer cmsmasters_headline_disabled">
+            <div class="headline_color"></div>
+        </div>
+    </div>
+    <div class="middle_inner">
+        <div class="content_wrap fullwidth">
+
+            <!--_________________________ Start Content _________________________ -->
+            <div class="middle_content entry"></div>
+        </div>
+
+        <div id="cmsmasters_row_65fd67fa256e42_17722268" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+            <div class="cmsmasters_row_outer_parent">
+                <div class="cmsmasters_row_outer">
+                    <div class="cmsmasters_row_inner">
+                        <div class="cmsmasters_row_margin">
+                            <div class="cmsmasters_column one_first">
+                                <div class="cmsmasters_slider">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="cmsmasters_row_65fd67fa2c0919_50237220" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+            <div class="cmsmasters_row_outer_parent">
+                <div class="cmsmasters_row_outer">
+                    <div class="cmsmasters_row_inner">
+                        <div class="cmsmasters_row_margin">
+                            <div class="cmsmasters_column one_first">
+                                <div class="cmsmasters_text">
+                                    <h3 style="text-align: center;">
+                                        <span style="font-size: 24pt; line-height: 32pt; font-weight: bold;">MOVIES <span style="font-weight: 100;">WHAT&#8217;S ON THE SCREEN TODAY</span></span>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="cmsmasters_row_65fd67fa2c1d75_16035716" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+            <div class="cmsmasters_row_outer_parent">
+                <div class="cmsmasters_row_outer">
+                    <div class="cmsmasters_row_inner">
+                        <div class="cmsmasters_row_margin">
+                           
+                            <div class="cmsmasters_column one_first">
+
+                                <div id="cmsmasters_divider_65fd671304c8c3_58465603" class="cl"></div>
+                                <div class="cmsmasters_clients_grid_wrap">
+                                    <div id="cmsmasters_clients_65fd671304cc33_70735951" class="cmsmasters_clients_grid clients_five">
+                                        <div class="cmsmasters_clients_items slides">
+                                             @foreach (var item in Model)
+                                            {
+                                                <div class="cmsmasters_clients_item item">
+                                                    <a href="https://mall.cmsmasters.net/fashion-brand/" target="_blank">
+                                                        <img decoding="async" src="~/CinemasLogo/@Html.DisplayFor(modelItem => item.CinemaLogo)" alt="Shabby Chic" />@Html.DisplayFor(modelItem => item.CinemaName)<span>                                                          @Html.DisplayFor(modelItem => item.CinemaName)</span>
+                                                    </a>
+                                                </div>
+                                            } 
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="cmsmasters_row_65fd67fa2df201_44468083" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+            <div class="cmsmasters_row_outer_parent">
+                <div class="cmsmasters_row_outer">
+                    <div class="cmsmasters_row_inner">
+                        <div class="cmsmasters_row_margin">
+                            <div class="cmsmasters_column one_first">
+
+                                <div id="cmsmasters_divider_65fd67fa2e0e58_43618463" class="cmsmasters_divider cmsmasters_divider_width_long cmsmasters_divider_pos_center"></div>
+                                <div class="cmsmasters_text">
+                                    <p>How does a perfect cinema look like? Like this!</p>
+                                    <p>There are 8 rooms which is enough to demonstrate without exception the best movies and not miss any premieres. Sessions starting every 15 minutes, and if you come you will always be in time.</p>
+                                    <p>Every Wednesday &#8211; Day of the Audience, on Thursday &#8211; the premiere night sessions for those who think that sleeping is boring.</p>
+                                    <p>There are three rooms for watching movies in 3D, large room for 426 spectators with almost 18-meter-screen and 4K technology, which is twice better than HD, and sound system Dolby Atmos.</p>
+                                    <p>Here you can find all genres that you can imagine, from Hollywood to European, from blockbusters to art house, movie festivals, prereleases and presentations with stars and celebrities.</p>
+                                    <p>There are also VIP-hall for 18 seats for those who want to watch the movie in comfort, popcorn bar, fresh juice bar, cinema bar and wardrobe for the convenience of visitors.</p>
+                                    <p>Service online booking on the website.</p>
+                                    <p>In short, everything you want from a movie theater is here at Cinema Citi. So, welcome to the city of movies that embodies the dreams of moviegoers!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cl"></div>
+        <div class="content_wrap fullwidth">
+
+            <div class="middle_content entry"></div>
+            <!-- _________________________ Finish Content _________________________ -->
+
+        </div>
+    </div>
+</div>
+<!-- _________________________ Finish Middle _________________________ -->
+
+
+

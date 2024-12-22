@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\ProductImages\**" />
+    <Content Remove="wwwroot\ProductImages\**" />
+    <EmbeddedResource Remove="wwwroot\ProductImages\**" />
+    <None Remove="wwwroot\ProductImages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\FoodCourtsLogo\" />
+    <Folder Include="wwwroot\CinemasLogo\" />
+    <Folder Include="wwwroot\MoviesPicture\" />
+    <Folder Include="wwwroot\ShopsLogo\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\newadmin\fonts\boxicons.woff2" />
+    <None Include="wwwroot\newadmin\fonts\LineIcons.woff2" />
+    <None Include="wwwroot\newadmin\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\newadmin\js\index.js" />
+    <None Include="wwwroot\newadmin\js\jquery.min.js" />
+    <None Include="wwwroot\newadmin\js\main.js" />
+    <None Include="wwwroot\newadmin\js\pace.min.js" />
+    <None Include="wwwroot\newadmin\plugins\apexcharts-bundle\js\apexcharts.min.js" />
+    <None Include="wwwroot\newadmin\plugins\chartjs\chart.min.js" />
+    <None Include="wwwroot\newadmin\plugins\easyPieChart\jquery.easypiechart.js" />
+    <None Include="wwwroot\newadmin\plugins\metismenu\js\metisMenu.min.js" />
+    <None Include="wwwroot\newadmin\plugins\metismenu\src\index.js" />
+    <None Include="wwwroot\newadmin\plugins\metismenu\src\util.js" />
+    <None Include="wwwroot\newadmin\plugins\perfect-scrollbar\js\perfect-scrollbar.js" />
+    <None Include="wwwroot\newadmin\plugins\simplebar\js\simplebar.min.js" />
+    <None Include="wwwroot\wp-content\plugins\themes\mall\js\jquery.cmsmasters-woo-script.js" />
+    <None Include="wwwroot\wp-content\plugins\themes\mall\js\jquery.iLightBox.min.js" />
+    <None Include="wwwroot\wp-content\plugins\themes\mall\js\jquery.isotope.min.js" />
+    <None Include="wwwroot\wp-content\plugins\themes\mall\js\jquery.isotope.mode.js" />
+    <None Include="wwwroot\wp-content\plugins\themes\mall\js\jquery.script.js" />
+    <None Include="wwwroot\wp-content\plugins\themes\mall\js\jquery.tweet.min.js" />
+    <None Include="wwwroot\wp-content\plugins\themes\mall\js\jqueryLibraries.min.js" />
+    <None Include="wwwroot\wp-content\plugins\themes\mall\js\jsLibraries.min.js" />
+    <None Include="wwwroot\wp-content\plugins\themes\mall\js\scrollspy.js" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://alec016.github.io/Custom-Machinery/Json%20Schema/src/main/resources/schemas/custom_machinery_machine.json" /></VisualStudio></ProjectExtensions>
+
+</Project>

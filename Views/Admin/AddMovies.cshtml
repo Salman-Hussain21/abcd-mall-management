@@ -1,0 +1,103 @@
+﻿@model Ecom_Store.Models.Movies_ImgModel
+
+@{
+    ViewData["Title"] = "AddMovies";
+    Layout = "~/Views/Shared/Admin_Header_Footer.cshtml";
+}
+<style>
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 800px;
+    }
+
+    .col-md-4 {
+        background-color: black;
+        width: 40%;
+        height: 800px;
+        border-radius: 20px;
+    }
+
+    .form-control {
+        height: 60px;
+        margin-top: 20px;
+    }
+
+    #btn {
+        width: 100%;
+        height: 60px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+</style>
+
+<h1>AddMovies</h1>
+
+<h4>MoviesModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddMovies" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+               @*  <label asp-for="Movies_Name" class="control-label"></label> *@
+                <input asp-for="Movies_Name" class="form-control" placeholder="MovieName" />
+                <span asp-validation-for="Movies_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @* <label asp-for="Movies_Desc" class="control-label"></label> *@
+                <input asp-for="Movies_Desc" class="form-control" placeholder="Movie Desc" />
+                <span asp-validation-for="Movies_Desc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              @*   <label asp-for="Cinema_ID" class="control-label"></label> *@
+                <select asp-for="Cinema_ID" class="form-control" >
+                   <option>
+                       Select Cinema
+                   </option>
+                    @if (ViewBag.Cin != null)
+                    {
+                        foreach (var c in ViewBag.Cin)
+                        {
+                            <option value="@c.id">
+                                @c.CinemaName
+                            </option>
+                        }
+                    }
+                  
+                </select>
+                <span asp-validation-for="Cinema_ID" class="text-danger"></span>
+                <div class="form-group">
+                    <label asp-for="StartTime" class="control-label"></label>
+                    <input asp-for="StartTime" class="form-control" type="time" />
+                    <span asp-validation-for="StartTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EndTime" class="control-label"></label>
+                    <input asp-for="EndTime" class="form-control" type="time" />
+                    <span asp-validation-for="EndTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ScreeningDate" class="control-label"></label>
+                    <input asp-for="ScreeningDate" class="form-control" type="date" />
+                    <span asp-validation-for="ScreeningDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MoviePicture" class="control-label"></label>
+                    <input asp-for="MoviePicture" type="file" class="form-control" />
+                    <span asp-validation-for="MoviePicture" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" id="btn" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

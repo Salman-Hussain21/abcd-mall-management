@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Ecom_Store.Models.CinemaModel>
+
+@{
+    ViewData["Title"] = "FetchCinema";
+    Layout = "~/Views/Shared/Admin_Header_Footer.cshtml";
+}
+
+<h1>FetchCinema</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CinemaName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CinemaDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CinemaSeats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CinemaLogo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CinemaName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CinemaDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CinemaSeats)
+            </td>
+                <td>
+                    <img src="~/CinemasLogo/@Html.DisplayFor(modelItem => item.CinemaLogo)" height="80px" width="80px" />
+                </td>
+            <td>
+                <a asp-action="EditCinema" asp-route-id="@item.id">Edit</a> |
+                
+                <a asp-action="DeleteCinema" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

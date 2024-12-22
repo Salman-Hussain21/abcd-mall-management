@@ -1,0 +1,51 @@
+﻿@model Ecom_Store.Models.Contactmodel
+
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/Header_footer_layout.cshtml";
+}
+
+<div class="brand_color">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage">
+                    <h2>Contact Us</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="contact mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Contact">
+                    <div class="row"> 
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">                          
+                            <input asp-for="Name" placeholder="Your name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">                           
+                            <input asp-for="Email" placeholder="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-12">               
+                            <textarea asp-for="Message" placeholder="Message" class="form-control"></textarea>
+                            <span asp-validation-for="Message" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="submit" value="Create" class=" btn send" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

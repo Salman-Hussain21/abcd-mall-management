@@ -1,0 +1,85 @@
+﻿@model Ecom_Store.ImageModel
+
+@{
+    ViewData["Title"] = "AddProducts";
+    Layout = "~/Views/Shared/Admin_Header_Footer.cshtml";
+}
+<style>
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 500px;
+    }
+
+    .col-md-4 {
+        background-color: black;
+        width: 40%;
+        height: 500px;
+        border-radius: 20px;
+    }
+
+    .form-control {
+        height: 60px;
+        margin-top: 20px;
+    }
+
+    #btn {
+        width: 100%;
+        height: 60px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+</style>
+
+<h1>Add Products</h1>
+
+
+<div class="card ml-3 mr-3 shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-dark">Add Products  </h6>
+    </div>
+
+    <div class="responsive">
+        <div class="row">
+            <div class="col-md-4 ml-4">
+                <form asp-action="AddProducts" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        @* <label asp-for="ProductName" class="control-label"></label> *@
+                        <input asp-for="ProductName" class="form-control" placeholder="Product Name" />
+                        <span asp-validation-for="ProductName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                       @*  <label asp-for="ProductDescription" class="control-label"></label> *@
+                        <input asp-for="ProductDescription" class="form-control" placeholder="Product Desc" />
+                        <span asp-validation-for="ProductDescription" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        @* <label asp-for="ProductPrice" class="control-label"></label> *@
+                        <input asp-for="ProductPrice" class="form-control" placeholder="Product Price" />
+                        <span asp-validation-for="ProductPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        @* <label asp-for="ProductQuantity" class="control-label"></label> *@
+                        <input asp-for="ProductQuantity" class="form-control" placeholder="Product Quantity" />
+                        <span asp-validation-for="ProductQuantity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductPhoto" class="control-label"></label>
+                        <input asp-for="ProductPhoto" type="file" class="form-control" />
+                        <span asp-validation-for="ProductPhoto" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" id="btn" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

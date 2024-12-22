@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Ecom_Store.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "FetchProducts";
+    Layout = "~/Views/Shared/Admin_Header_Footer.cshtml";
+}
+
+<h1>Fetch Products</h1>
+
+
+<div class="card ml-3 mr-3 shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-dark">Fetch Products  </h6>
+    </div>
+
+    <div class="responsive">
+    <table class="table  table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductImage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductQuantity)
+            </td>
+            <td>
+                    <img src="~/ProductImages/@Html.DisplayFor(modelItem => item.ProductImage)" height="80px" width="80px" />
+            </td>
+            <td>
+                <a asp-action="EditProducts" class="btn btn-primary" asp-route-id="@item.id">Edit</a> 
+                <a asp-action="Details" class="btn btn-info" asp-route-id="@item.id">Details</a>
+                <a asp-action="DeleteProducts" class="btn btn-danger" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </div>
+</div>
+
+            

@@ -1,0 +1,80 @@
+﻿@model Ecom_Store.SecondaryModels.Cinmea_ImgModel
+
+
+@{
+    ViewData["Title"] = "AddCinema";
+    Layout = "~/Views/Shared/Admin_Header_Footer.cshtml";
+}
+<
+    <style>
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 500px;
+    }
+
+    .col-md-4 {
+        background-color: black;
+        width: 40%;
+        height: 500px;
+        border-radius: 20px;
+    }
+
+    .form-control {
+        height: 60px;
+        margin-top: 20px;
+    }
+
+    #btn {
+        width: 100%;
+        height: 60px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+  
+</style>
+
+
+<h1 style="text-align:center">AddCinema</h1>
+
+<h4 style="text-align:center">CinemaModel</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddCinema" enctype="multipart/form-data" >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+               @*  <label asp-for="CinemaName" class="control-label"></label> *@
+                <input asp-for="CinemaName" class="form-control"  placeholder="Cinema Name"/>
+                <span asp-validation-for="CinemaName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+               @*  <label asp-for="CinemaDesc" class="control-label"></label> *@
+                <input asp-for="CinemaDesc" class="form-control" placeholder="Cinema Desc" />
+                <span asp-validation-for="CinemaDesc" class="text-danger"></span>
+            </div>
+       
+            <div class="form-group">
+               @*  <label asp-for="CinemaSeats" class="control-label"></label> *@
+                <input asp-for="CinemaSeats" class="form-control" placeholder="Cinema Seats" />
+                <span asp-validation-for="CinemaSeats" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CinemaLogo" class="control-label"></label>
+                <input asp-for="CinemaLogo" type="file" class="form-control" />
+                <span asp-validation-for="CinemaLogo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" id="btn" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

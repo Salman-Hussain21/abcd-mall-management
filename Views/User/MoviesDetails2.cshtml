@@ -1,0 +1,81 @@
+﻿@model Ecom_Store.Models.MoviesModel
+
+@{
+    ViewData["Title"] = "MoviesDetails2";
+    Layout = "~/Views/Shared/Header_footer_layout.cshtml";
+}
+
+<h1>MoviesDetails2</h1>
+
+<div>
+    <h4>MoviesModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Movies_Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Movies_Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Movies_Desc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Movies_Desc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EndTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EndTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ScreeningDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ScreeningDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CinemaName)
+        </dt>
+        <dd class = "col-sm-10">
+            @ViewBag.Cinema
+        </dd>
+
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MoviePicture)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MoviePicture)
+        </dd>
+        @for (var i = 1; i <= ViewBag.CinemaSeats; i++)
+        {
+            <form method="post" action="@Url.Action("bookedseats", "User")">
+                <input type="hidden" name="SeatId" value="@i" />
+                <input type="hidden" name="CinemaId" value="@ViewBag.CinemaId" />
+                <input type="hidden" name="MovieId" value="@ViewBag.MovieId" />
+                <button class="col-lg-3" type="submit">Seat No @i</button>
+            </form>
+        }
+        <div>
+            @if (ViewBag.Status != null)
+            {
+                <script>
+                    alert('@ViewBag.Status');
+                </script>
+            }
+        </div>
+    </dl>
+</div>
+<div>
+   
+</div>
+
+

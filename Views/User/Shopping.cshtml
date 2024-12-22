@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Ecom_Store.Models.ShopsModel>
+
+@{
+    ViewData["Title"] = "Shopping";
+    Layout = "~/Views/Shared/Header_footer_layout.cshtml";
+}
+
+<!-- _________________________ Start Middle _________________________ -->
+<div id="middle">
+    <style type="text/css">
+        .headline_color {
+            background-color:;
+        }
+
+        .headline_aligner,
+        .cmsmasters_breadcrumbs_aligner {
+            min-height: 80px;
+        }
+    </style>
+    <div class="headline cmsmasters_color_scheme_default">
+        <div class="headline_outer cmsmasters_headline_disabled">
+            <div class="headline_color"></div>
+        </div>
+    </div>
+    <div class="middle_inner">
+        <div class="content_wrap fullwidth">
+
+            <!--_________________________ Start Content _________________________ -->
+            <div class="middle_content entry"></div>
+        </div>
+
+        <div id="cmsmasters_row_65fd67130045d5_11164055" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+            <div class="cmsmasters_row_outer_parent">
+                <div class="cmsmasters_row_outer">
+                    <div class="cmsmasters_row_inner">
+                        <div class="cmsmasters_row_margin">
+                            <div class="cmsmasters_column one_first">
+                                <div class="cmsmasters_slider">
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="cmsmasters_row_65fd671304afa6_43417831" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_fullwidth">
+            <div class="cmsmasters_row_outer_parent">
+                <div class="cmsmasters_row_outer">
+                    <div class="cmsmasters_row_inner cmsmasters_row_fullwidth">
+                        <div class="cmsmasters_row_margin">
+                            <div class="cmsmasters_column one_first">
+                                <div class="cmsmasters_text">
+                                    <h3 style="text-align: center;">
+                                        <span style="font-size: 24pt; line-height: 32pt; font-weight: bold;">OUR BRANDS <span style="font-weight: 100;">ALL THE TRENDING SHOPS FOR YOU</span></span>
+                                    </h3>
+                                </div>                             
+                                <div id="cmsmasters_divider_65fd671304c8c3_58465603" class="cl"></div> 
+                                <div class="cmsmasters_clients_grid_wrap">
+                                    <div id="cmsmasters_clients_65fd671304cc33_70735951" class="cmsmasters_clients_grid clients_five">
+                                        <div class="cmsmasters_clients_items slides">
+                                            @foreach (var item in Model)
+                                            {
+                                            <div class="cmsmasters_clients_item item">
+                                                    <a href="https://mall.cmsmasters.net/fashion-brand/" target="_blank"><img decoding="async" src="~/ShopsLogo/@Html.DisplayFor(modelItem => item.ShopLogo)" alt="Shabby Chic" /><span> @Html.DisplayFor(modelItem => item.ShopName)</span></a>
+                                            </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cl"></div>
+        <div class="content_wrap fullwidth">
+
+            <div class="middle_content entry"></div>
+            <!-- _________________________ Finish Content _________________________ -->
+
+        </div>
+    </div>
+</div>
+<!-- _________________________ Finish Middle _________________________ -->
+
+
+
+

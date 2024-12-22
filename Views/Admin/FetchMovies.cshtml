@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Ecom_Store.Models.MoviesModel>
+
+@{
+    ViewData["Title"] = "FetchMovies";
+    Layout = "~/Views/Shared/Admin_Header_Footer.cshtml";
+}
+
+<h1>FetchMovies</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies_Desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CinemaName)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScreeningDate)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviePicture)
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movies_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movies_Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CinemaName.CinemaName)
+            </td>
+             <td>
+                    @Html.DisplayFor(modelItem => item.StartTime)
+             </td>
+              <td>
+                    @Html.DisplayFor(modelItem => item.EndTime)
+              </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScreeningDate)
+                </td>
+                <td>
+                    <img src="~/MoviesPicture/@Html.DisplayFor(modelItem => item.MoviePicture)" height="80px" width="80px" />
+                </td>
+                
+                
+            <td>
+                <a asp-action="EditMovies" asp-route-id="@item.id">Edit</a> |
+               
+                <a asp-action="DeleteMovies" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

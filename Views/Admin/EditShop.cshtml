@@ -1,0 +1,47 @@
+﻿@model Ecom_Store.SecondaryModels.Shop_ImgModel
+
+@{
+    ViewData["Title"] = "EditShop";
+    Layout = "~/Views/Shared/Admin_Header_Footer.cshtml";
+}
+
+<h1>EditShop</h1>
+
+<h4>ShopsModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditShop" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="ShopName" class="control-label"></label>
+                <input asp-for="ShopName" class="form-control" />
+                <span asp-validation-for="ShopName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShopLogo" class="control-label"></label>
+                <input asp-for="ShopLogo" class="form-control" type="file" />
+                <span asp-validation-for="ShopLogo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary"  />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script>
+    function showtoast() {
+        Toastify({
+            text: "This is a toast",
+            className: "info",
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+            }
+        }).showToast();
+    }
+</script>

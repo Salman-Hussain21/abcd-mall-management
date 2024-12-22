@@ -1,0 +1,37 @@
+﻿@model Ecom_Store.SecondaryModels.FoodCourt_ImgModel
+
+@{
+    ViewData["Title"] = "Editfoodcourt";
+    Layout = "~/Views/Shared/Admin_Header_Footer.cshtml";
+}
+
+<h1>Editfoodcourt</h1>
+
+<h4>FoodCourtModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editfoodcourt" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="FoodCourtName" class="control-label"></label>
+                <input asp-for="FoodCourtName" class="form-control" />
+                <span asp-validation-for="FoodCourtName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FoodCourtLogo" class="control-label"></label>
+                <input asp-for="FoodCourtLogo" type="file" class="form-control" />
+                <span asp-validation-for="FoodCourtLogo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

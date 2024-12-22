@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewData["Title"] = "payment";
+    Layout = "~/Views/Shared/Header_footer_layout.cshtml";
+}
+
+<style>
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 500px;
+    }
+
+    .col-md-4 {
+        background-color: black;
+        width: 20%;
+        height: 500px;
+        border-radius: 20px;
+        margin-left:120px;
+    }
+
+    .form-control {
+        height: 60px;
+        margin-top: 20px;
+        width:200px;
+    }
+
+    #btn {
+        width: 100%;
+        height: 60px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+</style>
+<h1>Payment</h1>
+<div class="row">
+
+<div class="col-md-4" style="background-color:black">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+        <form method="post" style="padding-left:30px">
+        <div>
+            <label for="card_number">Card Number:</label>
+            <br />
+                <input class="form-control" type="text" id="card_number" name="card_number" required>
+        </div>
+        <div>
+            <label for="expiration_date">Expiration Date:</label>
+                <br />
+                <input type="text" class="form-control" id="expiration_date" name="expiration_date" required>
+        </div>
+        <div>
+            <label for="cvv">CVV:</label>
+                <br />
+                <input type="text" class="form-control" id="cvv" name="cvv" required>
+        </div>
+        <div>
+            <label for="name_on_card">Name on Card:</label>
+                <br />
+                <input type="text" class="form-control" id="name_on_card" name="name_on_card" required>
+        </div>
+        <div>
+            <button asp-action="Movies" asp-controller="User">Submit Payment</button>
+        </div>
+    </form>
+</div>
+</div>

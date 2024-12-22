@@ -1,0 +1,580 @@
+﻿@model IEnumerable<Ecom_Store.Models.MoviesModel>
+
+@{
+    ViewData["Title"] = "Movies";
+    Layout = "~/Views/Shared/Header_footer_layout.cshtml";
+}
+
+@* <h1>Movies</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies_Desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScreeningDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CinemaName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviePicture)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movies_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movies_Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScreeningDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CinemaName.CinemaDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoviePicture)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+ *@
+
+<!-- _________________________ Start Middle _________________________ -->
+<div id="middle">
+    <style type="text/css">
+        .headline_color {
+            background-color:;
+        }
+
+        .headline_aligner,
+        .cmsmasters_breadcrumbs_aligner {
+            min-height: 80px;
+        }
+    </style>
+    <div class="headline cmsmasters_color_scheme_default">
+        <div class="headline_outer cmsmasters_headline_disabled">
+            <div class="headline_color"></div>
+        </div>
+    </div>
+    <div class="middle_inner">
+        <div class="content_wrap fullwidth">
+            <div class="cmsmasters_text">
+                <h3 style="text-align: center;">
+                    <span style="font-size: 24pt; line-height: 32pt; font-weight: bold;">Whats Special<span style="font-weight: 100;">On Screen Today</span></span>
+                </h3>
+            </div>
+            <!--_________________________ Start Content _________________________ -->
+            <div class="middle_content entry"></div>
+        </div>
+        <style type="text/css">
+            #cmsmasters_row_65fd67fa256e42_17722268 .cmsmasters_row_outer_parent {
+                padding-top: 30px;
+            }
+
+            #cmsmasters_row_65fd67fa256e42_17722268 .cmsmasters_row_outer_parent {
+                padding-bottom: 0px;
+            }
+
+            #cmsmasters_row_65fd67fa2c0919_50237220 .cmsmasters_row_outer_parent {
+                padding-top: 70px;
+            }
+
+            #cmsmasters_row_65fd67fa2c0919_50237220 .cmsmasters_row_outer_parent {
+                padding-bottom: 50px;
+            }
+
+            #cmsmasters_row_65fd67fa2c1d75_16035716 .cmsmasters_row_outer_parent {
+                padding-top: 0px;
+            }
+
+            #cmsmasters_row_65fd67fa2c1d75_16035716 .cmsmasters_row_outer_parent {
+                padding-bottom: 50px;
+            }
+
+            #cmsmasters_heading_65fd67fa2c5e19_49199181 {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+                #cmsmasters_heading_65fd67fa2c5e19_49199181 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_65fd67fa2c5e19_49199181 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2c5e19_49199181 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_65fd67fa2c5e19_49199181 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_65fd67fa2c62d9_84021726 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+
+                #cmsmasters_heading_65fd67fa2c62d9_84021726 .cmsmasters_heading {
+                    text-align: center;
+                    background-color: #fa6426;
+                    padding-left: 1em;
+                    padding-right: 1em;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px;
+                }
+
+                    #cmsmasters_heading_65fd67fa2c62d9_84021726 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2c62d9_84021726 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                        color: #ffffff;
+                    }
+
+                #cmsmasters_heading_65fd67fa2c62d9_84021726 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_65fd67fa2c9735_57606574 {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+                #cmsmasters_heading_65fd67fa2c9735_57606574 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_65fd67fa2c9735_57606574 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2c9735_57606574 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_65fd67fa2c9735_57606574 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_65fd67fa2c9bb8_79763472 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+
+                #cmsmasters_heading_65fd67fa2c9bb8_79763472 .cmsmasters_heading {
+                    text-align: center;
+                    background-color: #fa6426;
+                    padding-left: 1em;
+                    padding-right: 1em;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px;
+                }
+
+                    #cmsmasters_heading_65fd67fa2c9bb8_79763472 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2c9bb8_79763472 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                        color: #ffffff;
+                    }
+
+                #cmsmasters_heading_65fd67fa2c9bb8_79763472 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_65fd67fa2ccee3_39803788 {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+                #cmsmasters_heading_65fd67fa2ccee3_39803788 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_65fd67fa2ccee3_39803788 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2ccee3_39803788 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_65fd67fa2ccee3_39803788 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_65fd67fa2cd380_54780012 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+
+                #cmsmasters_heading_65fd67fa2cd380_54780012 .cmsmasters_heading {
+                    text-align: center;
+                    background-color: #fa6426;
+                    padding-left: 1em;
+                    padding-right: 1em;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px;
+                }
+
+                    #cmsmasters_heading_65fd67fa2cd380_54780012 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2cd380_54780012 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                        color: #ffffff;
+                    }
+
+                #cmsmasters_heading_65fd67fa2cd380_54780012 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_65fd67fa2d0624_71838790 {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+                #cmsmasters_heading_65fd67fa2d0624_71838790 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_65fd67fa2d0624_71838790 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2d0624_71838790 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_65fd67fa2d0624_71838790 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_65fd67fa2d0aa9_71066017 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+
+                #cmsmasters_heading_65fd67fa2d0aa9_71066017 .cmsmasters_heading {
+                    text-align: center;
+                    background-color: #fa6426;
+                    padding-left: 1em;
+                    padding-right: 1em;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px;
+                }
+
+                    #cmsmasters_heading_65fd67fa2d0aa9_71066017 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2d0aa9_71066017 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                        color: #ffffff;
+                    }
+
+                #cmsmasters_heading_65fd67fa2d0aa9_71066017 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_row_65fd67fa2d1203_06792386 .cmsmasters_row_outer_parent {
+                padding-top: 0px;
+            }
+
+            #cmsmasters_row_65fd67fa2d1203_06792386 .cmsmasters_row_outer_parent {
+                padding-bottom: 50px;
+            }
+
+            #cmsmasters_heading_65fd67fa2d43d6_35631140 {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+                #cmsmasters_heading_65fd67fa2d43d6_35631140 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_65fd67fa2d43d6_35631140 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2d43d6_35631140 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_65fd67fa2d43d6_35631140 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_65fd67fa2d4864_64467250 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+
+                #cmsmasters_heading_65fd67fa2d4864_64467250 .cmsmasters_heading {
+                    text-align: center;
+                    background-color: #fa6426;
+                    padding-left: 1em;
+                    padding-right: 1em;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px;
+                }
+
+                    #cmsmasters_heading_65fd67fa2d4864_64467250 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2d4864_64467250 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                        color: #ffffff;
+                    }
+
+                #cmsmasters_heading_65fd67fa2d4864_64467250 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_65fd67fa2d79a4_50292039 {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+                #cmsmasters_heading_65fd67fa2d79a4_50292039 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_65fd67fa2d79a4_50292039 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2d79a4_50292039 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_65fd67fa2d79a4_50292039 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_65fd67fa2d7dc4_86964132 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+
+                #cmsmasters_heading_65fd67fa2d7dc4_86964132 .cmsmasters_heading {
+                    text-align: center;
+                    background-color: #fa6426;
+                    padding-left: 1em;
+                    padding-right: 1em;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px;
+                }
+
+                    #cmsmasters_heading_65fd67fa2d7dc4_86964132 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2d7dc4_86964132 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                        color: #ffffff;
+                    }
+
+                #cmsmasters_heading_65fd67fa2d7dc4_86964132 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_65fd67fa2dafa4_45404281 {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+                #cmsmasters_heading_65fd67fa2dafa4_45404281 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_65fd67fa2dafa4_45404281 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2dafa4_45404281 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_65fd67fa2dafa4_45404281 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_65fd67fa2db5d8_95751038 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+
+                #cmsmasters_heading_65fd67fa2db5d8_95751038 .cmsmasters_heading {
+                    text-align: center;
+                    background-color: #fa6426;
+                    padding-left: 1em;
+                    padding-right: 1em;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px;
+                }
+
+                    #cmsmasters_heading_65fd67fa2db5d8_95751038 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2db5d8_95751038 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                        color: #ffffff;
+                    }
+
+                #cmsmasters_heading_65fd67fa2db5d8_95751038 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_65fd67fa2de651_79136397 {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+                #cmsmasters_heading_65fd67fa2de651_79136397 .cmsmasters_heading {
+                    text-align: center;
+                }
+
+                    #cmsmasters_heading_65fd67fa2de651_79136397 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2de651_79136397 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+
+                #cmsmasters_heading_65fd67fa2de651_79136397 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_heading_65fd67fa2dea73_21092271 {
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+
+                #cmsmasters_heading_65fd67fa2dea73_21092271 .cmsmasters_heading {
+                    text-align: center;
+                    background-color: #fa6426;
+                    padding-left: 1em;
+                    padding-right: 1em;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px;
+                }
+
+                    #cmsmasters_heading_65fd67fa2dea73_21092271 .cmsmasters_heading,
+                    #cmsmasters_heading_65fd67fa2dea73_21092271 .cmsmasters_heading a {
+                        font-weight: 700;
+                        font-style: normal;
+                        color: #ffffff;
+                    }
+
+                #cmsmasters_heading_65fd67fa2dea73_21092271 .cmsmasters_heading_divider {
+                }
+
+            #cmsmasters_row_65fd67fa2df201_44468083 .cmsmasters_row_outer_parent {
+                padding-top: 0px;
+            }
+
+            #cmsmasters_row_65fd67fa2df201_44468083 .cmsmasters_row_outer_parent {
+                padding-bottom: 50px;
+            }
+
+            #cmsmasters_divider_65fd67fa2e0e58_43618463 {
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                padding-top: 0px;
+                margin-bottom: 50px;
+            }
+        </style>
+       
+        <div id="cmsmasters_row_65fd67fa2c1d75_16035716" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+            <div class="cmsmasters_row_outer_parent">
+                <div class="cmsmasters_row_outer">
+                    <div class="cmsmasters_row_inner">
+                        <div class="cmsmasters_row_margin">
+                            @foreach (var item in Model)
+                                {
+                            <div class="cmsmasters_column one_fourth">
+                                
+
+                                <div class="aligncenter">
+                                    <div class="cmsmasters_img  cmsmasters_image_c">
+                                            <a asp-action="MoviesDetails" asp-route-id="@item.id"><img src="~/MoviesPicture/@Html.DisplayFor(modelItem => item.MoviePicture)" height="300px" width="400px" /></a>
+                                    </div>
+                                </div>
+
+                                <div id="cmsmasters_heading_65fd67fa2c5e19_49199181" class="cmsmasters_heading_wrap cmsmasters_heading_align_center">
+                                        
+                                        <h3 class="cmsmasters_heading"><a href="https://mall.cmsmasters.net/movie/"> @Html.DisplayFor(modelItem => item.Movies_Name) </a></h3>
+                                </div>
+                                <div id="cmsmasters_heading_65fd67fa2c62d9_84021726" class="cmsmasters_heading_wrap cmsmasters_heading_align_center">
+                                    <h4 class="cmsmasters_heading"></h4>
+                                </div>
+
+                                
+
+                            </div>
+                            }
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div id="cmsmasters_row_65fd67fa2df201_44468083" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+            <div class="cmsmasters_row_outer_parent">
+                <div class="cmsmasters_row_outer">
+                    <div class="cmsmasters_row_inner">
+                        <div class="cmsmasters_row_margin">
+                            <div class="cmsmasters_column one_first">
+
+                                <div id="cmsmasters_divider_65fd67fa2e0e58_43618463" class="cmsmasters_divider cmsmasters_divider_width_long cmsmasters_divider_pos_center"></div>
+                                <div class="cmsmasters_text">
+                                    <p>How does a perfect cinema look like? Like this!</p>
+                                    <p>There are 8 rooms which is enough to demonstrate without exception the best movies and not miss any premieres. Sessions starting every 15 minutes, and if you come you will always be in time.</p>
+                                    <p>Every Wednesday &#8211; Day of the Audience, on Thursday &#8211; the premiere night sessions for those who think that sleeping is boring.</p>
+                                    <p>There are three rooms for watching movies in 3D, large room for 426 spectators with almost 18-meter-screen and 4K technology, which is twice better than HD, and sound system Dolby Atmos.</p>
+                                    <p>Here you can find all genres that you can imagine, from Hollywood to European, from blockbusters to art house, movie festivals, prereleases and presentations with stars and celebrities.</p>
+                                    <p>There are also VIP-hall for 18 seats for those who want to watch the movie in comfort, popcorn bar, fresh juice bar, cinema bar and wardrobe for the convenience of visitors.</p>
+                                    <p>Service online booking on the website.</p>
+                                    <p>In short, everything you want from a movie theater is here at Cinema Citi. So, welcome to the city of movies that embodies the dreams of moviegoers!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cl"></div>
+        <div class="content_wrap fullwidth">
+
+            <div class="middle_content entry"></div>
+            <!-- _________________________ Finish Content _________________________ -->
+
+        </div>
+    </div>
+</div>
+<!-- _________________________ Finish Middle _________________________ -->
+<div>
+    @if (TempData["Status"] != null)
+    {
+        <script>
+            alert('@TempData["Status"]');
+        </script>
+    }
+</div>

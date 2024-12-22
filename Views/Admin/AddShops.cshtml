@@ -1,0 +1,64 @@
+﻿@model Ecom_Store.SecondaryModels.Shop_ImgModel
+
+@{
+    ViewData["Title"] = "AddShops";
+    Layout = "~/Views/Shared/Admin_Header_Footer.cshtml";
+}
+<style>
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 300px;
+    }
+
+    .col-md-4 {
+        background-color: black;
+        width: 40%;
+        height: 300px;
+        border-radius: 20px;
+    }
+
+    .form-control {
+        height: 60px;
+        margin-top: 20px;
+    }
+
+    #btn {
+        width: 100%;
+        height: 60px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+</style>
+
+<h1>AddShops</h1>
+
+<h4>ShopsModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddShops" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+             @*    <label asp-for="ShopName" class="control-label"></label> *@
+                <input asp-for="ShopName" class="form-control" placeholder="Shop Name" />
+                <span asp-validation-for="ShopName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              @*   <label asp-for="ShopLogo" class="control-label"></label> *@
+                <input asp-for="ShopLogo" type="file" class="form-control" placeholder="Shop Logo" />
+                <span asp-validation-for="ShopLogo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" id="btn" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
